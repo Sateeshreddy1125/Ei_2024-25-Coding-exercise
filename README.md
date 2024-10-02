@@ -1,4 +1,5 @@
 # Ei_2024-25-Coding-exercise
+Exercise - 1:
 1. Behavioral Design Pattern
 PaymentStrategy.java
 Introduction:
@@ -26,3 +27,9 @@ This use case demonstrates the Adapter pattern by allowing incompatible interfac
   Introduction:
   This use case illustrates the Decorator pattern by adding extra functionality (Milk, Sugar) to a basic coffee without altering its structure.
 
+Exercise - 2:
+This project is a terminal-based Virtual Classroom Manager that handles operations like class scheduling, student enrollment, and assignment submissions. It allows for easy management of virtual classrooms, following SOLID principles and applying design patterns to ensure maintainability and scalability.
+
+Classroom Management: Add, list, and remove virtual classrooms.
+Student Management: Enroll students in classrooms and manage them.
+Assignment Management: Schedule and submit assignments for each class.
