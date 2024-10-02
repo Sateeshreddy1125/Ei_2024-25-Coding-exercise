@@ -16,6 +16,24 @@ class SimpleCoffee implements Coffee {
     }
 }
 
+abstract class CoffeeDecorator implements Coffee {
+    protected Coffee coffee;
+
+    public CoffeeDecorator(Coffee coffee) {
+        this.coffee = coffee;
+    }
+
+    @Override
+    public String getDescription() {
+        return coffee.getDescription();
+    }
+
+    @Override
+    public double getCost() {
+        return coffee.getCost();
+    }
+}
+
 class MilkDecorator extends CoffeeDecorator {
     public MilkDecorator(Coffee coffee) {
         super(coffee);
@@ -48,16 +66,15 @@ class SugarDecorator extends CoffeeDecorator {
     }
 }
 
-abstract class CoffeeDecorator implements Coffee {
-    private Coffee coffee;
+public class DecoratorPatternDemo {
+    public static void main(String[] args) {
+        Coffee coffee = new SimpleCoffee();
+        System.out.println(coffee.getDescription() + " - $" + coffee.getCost());
 
-    public CoffeeDecorator(Coffee coffee) {
-        this.coffee = coffee;
+        coffee = new MilkDecorator(coffee);
+        System.out.println(coffee.getDescription() + " - $" + coffee.getCost());
+
+        coffee = new SugarDecorator(coffee);
+        System.out.println(coffee.getDescription() + " - $" + coffee.getCost());
     }
-
-    @Override
-    public String getDescription() {
-        return coffee.getDescription();
-    }
-
-    @
+}
